@@ -27,7 +27,9 @@
       "Bash(ng build:*)",
       "Bash(npx ng:*)",
       "Bash(node_modules/.bin/ng build)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git push:*)"
     ]
   }
 }
