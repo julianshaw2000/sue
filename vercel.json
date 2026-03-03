@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd susan-lowe-books && npm install && npm run build",
+  "outputDirectory": "susan-lowe-books/dist/susan-lowe-books/browser",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
