@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.amazon.com)",
+      "Bash(npx @angular/cli@latest new susan-lowe-books --standalone --routing --style=scss --skip-git --package-manager=npm)",
+      "Bash(test:*)",
+      "Bash(ng version:*)",
+      "Bash(npm install)",
+      "Bash(npm run start:*)",
+      "Bash(npx ng version)",
+      "Bash(npx ng serve --port 4200)",
+      "Bash(timeout 30 npx ng serve:*)",
+      "Bash(npx ng build:*)",
+      "WebFetch(domain:www.abebooks.co.uk)",
+      "Bash(ls:*)",
+      "Bash(git rm:*)",
+      "Bash(git add:*)",
+      "Bash(powershell -Command \"Remove-Item -Force -ErrorAction SilentlyContinue ''.git/index.lock''\")",
+      "Bash(cmd /c \"del /F /Q C:\\\\__Sue\\\\.git\\\\index.lock\")",
+      "Bash(tasklist:*)",
+      "Bash(lsof:*)",
+      "Bash(handle .git/index.lock)",
+      "Bash(taskkill:*)"
+    ]
+  }
+}

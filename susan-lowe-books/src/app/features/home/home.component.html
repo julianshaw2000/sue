@@ -1,0 +1,50 @@
+<!-- Hero Section -->
+<app-hero-section />
+
+<!-- Featured Books Section -->
+<section class="section featured-books">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Books</h2>
+      <p>Discover captivating stories from Jamaica and beyond</p>
+    </div>
+
+    @if (isLoading()) {
+      <app-loading-spinner />
+    } @else {
+      <div class="books-grid">
+        @for (book of featuredBooks(); track book.id) {
+          <app-book-card [book]="book" />
+        }
+      </div>
+
+      <div class="view-all">
+        <a mat-raised-button color="primary" routerLink="/books">
+          <mat-icon>library_books</mat-icon>
+          View All Books
+        </a>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Author Highlight Section -->
+<section class="section author-highlight">
+  <div class="container">
+    <div class="author-content">
+      <div class="author-text">
+        <h2>About {{ author().name }}</h2>
+        <p class="author-credentials">
+          @for (credential of author().credentials; track credential) {
+            <span class="credential">{{ credential }}</span>
+          }
+        </p>
+        <p class="author-bio">{{ author().bio }}</p>
+        <a mat-raised-button color="accent" routerLink="/about">
+          <mat-icon>person</mat-icon>
+          Learn More About the Author
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<!-- PayPal button container -->
+<div #paypalContainer class="paypal-button-container">
+  @if (isLoading()) {
+    <div class="loading">Loading payment...</div>
+  }
+
+  @if (!showPayPalButton() && !isLoading()) {
+    <!-- Temporary placeholder button for demo -->
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="openPayPalDemo()"
+      [disabled]="disabled()"
+      class="paypal-demo-button"
+    >
+      <mat-icon>payment</mat-icon>
+      Buy with PayPal - ${{ price() }}
+    </button>
+  }
+</div>

@@ -1,0 +1,176 @@
+.book-detail-page {
+  min-height: 70vh;
+  padding: 32px 0;
+
+  .back-nav {
+    margin-bottom: 24px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+
+  .book-detail {
+    display: grid;
+    gap: 48px;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 960px) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .book-cover-section {
+      position: relative;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+
+      .age-rating-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: #ff9800;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .book-info {
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--jamaica-green);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--text-light);
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+
+      .author {
+        font-size: 1.125rem;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+      }
+
+      .book-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-bottom: 1.5rem;
+
+        .meta-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--text-dark);
+
+          mat-icon {
+            color: var(--jamaica-green);
+            font-size: 1.2rem;
+            width: 1.2rem;
+            height: 1.2rem;
+          }
+        }
+      }
+
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 1.5rem;
+      }
+
+      mat-divider {
+        margin: 24px 0;
+      }
+
+      .description {
+        h3 {
+          color: var(--jamaica-green);
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1.125rem;
+          line-height: 1.8;
+          color: var(--text-dark);
+        }
+      }
+
+      .price-section {
+        .price {
+          display: flex;
+          align-items: baseline;
+          gap: 12px;
+          margin-bottom: 1.5rem;
+
+          .price-label {
+            font-size: 1rem;
+            color: var(--text-light);
+          }
+
+          .price-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--jamaica-green);
+          }
+        }
+      }
+
+      .purchase-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        button, a {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 14px 24px;
+        }
+      }
+    }
+  }
+
+  .not-found {
+    text-align: center;
+    padding: 64px 16px;
+
+    mat-icon {
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+  }
+}

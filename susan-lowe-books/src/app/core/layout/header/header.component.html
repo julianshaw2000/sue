@@ -1,0 +1,99 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="container toolbar-content">
+    <!-- Logo/Brand -->
+    <a routerLink="/home" class="brand">
+      <span class="brand-name">Susan Lowe</span>
+      <span class="brand-tagline">Author • Doctor • Coach</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a
+        mat-button
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+      >
+        <mat-icon>home</mat-icon>
+        Home
+      </a>
+      <a
+        mat-button
+        routerLink="/books"
+        routerLinkActive="active"
+      >
+        <mat-icon>menu_book</mat-icon>
+        Books
+      </a>
+      <a
+        mat-button
+        routerLink="/services"
+        routerLinkActive="active"
+      >
+        <mat-icon>healing</mat-icon>
+        Services
+      </a>
+      <a
+        mat-button
+        routerLink="/about"
+        routerLinkActive="active"
+      >
+        <mat-icon>person</mat-icon>
+        About
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      mat-icon-button
+      class="mobile-menu-button"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle menu"
+    >
+      <mat-icon>{{ mobileMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!-- Mobile Navigation -->
+@if (mobileMenuOpen()) {
+  <nav class="mobile-nav">
+    <a
+      mat-button
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      (click)="closeMobileMenu()"
+    >
+      <mat-icon>home</mat-icon>
+      Home
+    </a>
+    <a
+      mat-button
+      routerLink="/books"
+      routerLinkActive="active"
+      (click)="closeMobileMenu()"
+    >
+      <mat-icon>menu_book</mat-icon>
+      Books
+    </a>
+    <a
+      mat-button
+      routerLink="/services"
+      routerLinkActive="active"
+      (click)="closeMobileMenu()"
+    >
+      <mat-icon>healing</mat-icon>
+      Services
+    </a>
+    <a
+      mat-button
+      routerLink="/about"
+      routerLinkActive="active"
+      (click)="closeMobileMenu()"
+    >
+      <mat-icon>person</mat-icon>
+      About
+    </a>
+  </nav>
+}

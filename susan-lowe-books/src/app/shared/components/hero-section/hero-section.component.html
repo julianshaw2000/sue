@@ -1,0 +1,29 @@
+<section class="hero" [style.background-image]="'url(' + backgroundImage() + ')'">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <h1 class="hero-title">{{ title() }}</h1>
+      <p class="hero-subtitle">{{ subtitle() }}</p>
+      <p class="hero-description">{{ description() }}</p>
+      <div class="hero-actions">
+        <a
+          mat-raised-button
+          color="primary"
+          [routerLink]="ctaLink()"
+          class="cta-button"
+        >
+          <mat-icon>menu_book</mat-icon>
+          {{ ctaText() }}
+        </a>
+        <a
+          mat-stroked-button
+          routerLink="/about"
+          class="secondary-button"
+        >
+          <mat-icon>person</mat-icon>
+          About the Author
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

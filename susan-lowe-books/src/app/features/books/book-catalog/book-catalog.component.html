@@ -1,0 +1,67 @@
+<div class="catalog-page">
+  <div class="container">
+    <!-- Header -->
+    <div class="page-header">
+      <h1>All Books by Susan Lowe</h1>
+      <p>Explore the complete collection</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search books</mat-label>
+        <input
+          matInput
+          [value]="searchQuery()"
+          (input)="onSearchChange($any($event.target).value)"
+          placeholder="Search by title, description, or genre"
+        />
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="genre-field">
+        <mat-label>Filter by genre</mat-label>
+        <mat-select
+          [value]="selectedGenre()"
+          (valueChange)="onGenreChange($event)"
+        >
+          <mat-option value="all">All Genres</mat-option>
+          @for (genre of allGenres(); track genre) {
+            <mat-option [value]="genre">{{ genre }}</mat-option>
+          }
+        </mat-select>
+        <mat-icon matPrefix>category</mat-icon>
+      </mat-form-field>
+
+      @if (searchQuery() || selectedGenre() !== 'all') {
+        <button mat-raised-button (click)="clearFilters()">
+          <mat-icon>clear</mat-icon>
+          Clear Filters
+        </button>
+      }
+    </div>
+
+    <!-- Results Count -->
+    <div class="results-info">
+      <p>Showing {{ books().length }} {{ books().length === 1 ? 'book' : 'books' }}</p>
+    </div>
+
+    <!-- Books Grid -->
+    @if (books().length === 0) {
+      <div class="no-results">
+        <mat-icon>search_off</mat-icon>
+        <h3>No books found</h3>
+        <p>Try adjusting your search or filters</p>
+        <button mat-raised-button color="primary" (click)="clearFilters()">
+          Clear Filters
+        </button>
+      </div>
+    } @else {
+      <div class="books-grid">
+        @for (book of books(); track book.id) {
+          <app-book-card [book]="book" />
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.paypal-button-container {
+  min-height: 45px;
+  width: 100%;
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  .paypal-demo-button {
+    width: 100%;
+    padding: 12px 24px;
+    font-weight: 500;
+
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}

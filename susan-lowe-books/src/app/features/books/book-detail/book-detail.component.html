@@ -1,0 +1,134 @@
+<div class="book-detail-page">
+  @if (book(); as bookData) {
+    <div class="container">
+      <div class="back-nav">
+        <a mat-button routerLink="/books">
+          <mat-icon>arrow_back</mat-icon>
+          Back to All Books
+        </a>
+      </div>
+
+      <div class="book-detail">
+        <!-- Book Cover -->
+        <div class="book-cover-section">
+          <img
+            [src]="bookData.coverImage"
+            [alt]="bookData.title + ' by ' + bookData.author"
+          />
+          @if (bookData.ageRating) {
+            <div class="age-rating-badge">{{ bookData.ageRating }}</div>
+          }
+        </div>
+
+        <!-- Book Info -->
+        <div class="book-info">
+          <h1>{{ bookData.title }}</h1>
+          @if (bookData.subtitle) {
+            <h2 class="subtitle">{{ bookData.subtitle }}</h2>
+          }
+
+          <p class="author">by {{ bookData.author }}</p>
+
+          <div class="book-meta">
+            <div class="meta-item">
+              <mat-icon>calendar_today</mat-icon>
+              <span>Published {{ bookData.publishedDate }}</span>
+            </div>
+            @if (bookData.isbn) {
+              <div class="meta-item">
+                <mat-icon>barcode</mat-icon>
+                <span>ISBN: {{ bookData.isbn }}</span>
+              </div>
+            }
+            <div class="meta-item">
+              <mat-icon>menu_book</mat-icon>
+              <span>{{ bookData.pageCount }} pages</span>
+            </div>
+            <div class="meta-item">
+              <mat-icon>language</mat-icon>
+              <span>{{ bookData.language }}</span>
+            </div>
+          </div>
+
+          <div class="genres">
+            @for (genre of bookData.genres; track genre) {
+              <mat-chip>{{ genre }}</mat-chip>
+            }
+          </div>
+
+          <mat-divider />
+
+          <div class="description">
+            <h3>About This Book</h3>
+            <p>{{ bookData.longDescription }}</p>
+          </div>
+
+          <mat-divider />
+
+          <div class="price-section">
+            <div class="price">
+              <span class="price-label">Price:</span>
+              <span class="price-amount">${{ bookData.price }} {{ bookData.currency }}</span>
+            </div>
+          </div>
+
+          <div class="purchase-options">
+            <app-paypal-button
+              [bookId]="bookData.id"
+              [price]="bookData.price"
+            />
+
+            @if (bookData.amazonLink) {
+              <a
+                mat-raised-button
+                color="primary"
+                [href]="bookData.amazonLink"
+                target="_blank"
+                rel="noopener"
+              >
+                <mat-icon>shopping_cart</mat-icon>
+                Buy on Amazon
+              </a>
+            }
+
+            @if (bookData.koboLink) {
+              <a
+                mat-stroked-button
+                [href]="bookData.koboLink"
+                target="_blank"
+                rel="noopener"
+              >
+                <mat-icon>book</mat-icon>
+                Buy on Kobo
+              </a>
+            }
+
+            @if (bookData.goodreadsLink) {
+              <a
+                mat-stroked-button
+                [href]="bookData.goodreadsLink"
+                target="_blank"
+                rel="noopener"
+              >
+                <mat-icon>star</mat-icon>
+                View on Goodreads
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="container">
+      <div class="not-found">
+        <mat-icon>search_off</mat-icon>
+        <h2>Book Not Found</h2>
+        <p>The book you're looking for doesn't exist.</p>
+        <a mat-raised-button color="primary" routerLink="/books">
+          <mat-icon>library_books</mat-icon>
+          View All Books
+        </a>
+      </div>
+    </div>
+  }
+</div>

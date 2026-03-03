@@ -1,0 +1,171 @@
+<div class="services-page">
+  <!-- Hero Section -->
+  <section class="services-hero">
+    <div class="container">
+      <h1>Healthcare & Counseling Services</h1>
+      <p class="lead">Integrative General Practice • Transformational Coaching • Holistic Medicine</p>
+      <p class="subtitle">Combining conventional medicine with natural therapies for comprehensive wellness</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section services-section">
+    <div class="container">
+      <h2 class="section-title">Services Offered</h2>
+
+      <div class="services-grid">
+        @for (service of services; track service.title) {
+          <mat-card class="service-card">
+            <mat-card-header>
+              <div class="service-icon" [class]="'category-' + service.category">
+                <mat-icon>{{ service.icon }}</mat-icon>
+              </div>
+            </mat-card-header>
+
+            <mat-card-content>
+              <h3>{{ service.title }}</h3>
+              <p class="service-description">{{ service.description }}</p>
+
+              <ul class="service-features">
+                @for (feature of service.features; track feature) {
+                  <li>
+                    <mat-icon>check_circle</mat-icon>
+                    <span>{{ feature }}</span>
+                  </li>
+                }
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Medical Background -->
+  <section class="section background-section">
+    <div class="container">
+      <h2 class="section-title">Medical Background & Specializations</h2>
+      <p class="intro-text">
+        Dr. Susan Lowe brings extensive medical training and diverse specializations to her integrative practice:
+      </p>
+
+      <div class="specializations-grid">
+        @for (spec of specializations; track spec) {
+          <mat-chip class="specialization-chip">
+            <mat-icon>verified</mat-icon>
+            {{ spec }}
+          </mat-chip>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Clients Say</h2>
+
+      <div class="testimonials-grid">
+        @for (testimonial of testimonials; track testimonial.text) {
+          <mat-card class="testimonial-card">
+            <mat-card-content>
+              <mat-icon class="quote-icon">format_quote</mat-icon>
+              <p class="testimonial-text">{{ testimonial.text }}</p>
+              <p class="testimonial-author">— {{ testimonial.author }}</p>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <mat-card class="contact-card">
+        <mat-card-content>
+          <h2>Ready to Begin Your Wellness Journey?</h2>
+          <p>Contact Dr. Susan Lowe for online or in-person consultations</p>
+
+          <div class="contact-options">
+            <a
+              mat-raised-button
+              color="primary"
+              [href]="'tel:' + contactPhone"
+              class="contact-button"
+            >
+              <mat-icon>phone</mat-icon>
+              {{ contactPhone }}
+            </a>
+
+            <a
+              mat-raised-button
+              color="accent"
+              [href]="contactWebsite"
+              target="_blank"
+              rel="noopener"
+              class="contact-button"
+            >
+              <mat-icon>language</mat-icon>
+              Visit Website
+            </a>
+          </div>
+
+          <div class="service-areas">
+            <mat-icon>location_on</mat-icon>
+            <p>Serving all of Jamaica from Kingston • Online sessions available internationally</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- Approach Section -->
+  <section class="section approach-section">
+    <div class="container">
+      <h2 class="section-title">Integrative Approach</h2>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>healing</mat-icon>
+              Holistic Medicine
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Dr. Lowe embraces a holistic approach to medicine, incorporating nutrition, lifestyle factors,
+            and alternative therapies alongside conventional medical treatments. This comprehensive approach
+            addresses the whole person—body, mind, and spirit.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>psychology</mat-icon>
+              Transformational Psychology
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Using evidence-based transformational positive psychology, Dr. Lowe helps clients achieve
+            meaningful personal growth, overcome challenges, and develop resilience for lasting change.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>balance</mat-icon>
+              Integrative Care
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Comfortable with both conventional "regular" medicine and natural therapies, Dr. Lowe creates
+            personalized treatment plans that draw from the best of both worlds for optimal patient outcomes.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+</div>

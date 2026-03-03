@@ -1,0 +1,70 @@
+<mat-card class="book-card">
+  <mat-card-header>
+    @if (book().ageRating) {
+      <mat-chip class="age-rating">{{ book().ageRating }}</mat-chip>
+    }
+  </mat-card-header>
+
+  <div class="book-cover">
+    <img
+      [src]="book().coverImage"
+      [alt]="book().title + ' by ' + book().author"
+      loading="lazy"
+    />
+  </div>
+
+  <mat-card-content>
+    <h3 class="book-title">{{ book().title }}</h3>
+    @if (book().subtitle) {
+      <p class="book-subtitle">{{ book().subtitle }}</p>
+    }
+
+    <p class="book-description">
+      {{ showFullDescription() ? book().longDescription : book().description }}
+    </p>
+
+    <div class="book-genres">
+      @for (genre of book().genres; track genre) {
+        <mat-chip>{{ genre }}</mat-chip>
+      }
+    </div>
+
+    <div class="book-meta">
+      @if (book().isbn) {
+        <p class="isbn">
+          <mat-icon>barcode</mat-icon>
+          <span>ISBN: {{ book().isbn }}</span>
+        </p>
+      }
+      <p class="price">${{ book().price }} {{ book().currency }}</p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/books', book().id]"
+    >
+      <mat-icon>menu_book</mat-icon>
+      View Details
+    </button>
+
+    <app-paypal-button
+      [bookId]="book().id"
+      [price]="book().price"
+    />
+
+    @if (book().amazonLink) {
+      <a
+        mat-button
+        [href]="book().amazonLink"
+        target="_blank"
+        rel="noopener"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+        Buy on Amazon
+      </a>
+    }
+  </mat-card-actions>
+</mat-card>
