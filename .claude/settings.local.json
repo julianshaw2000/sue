@@ -29,7 +29,8 @@
       "Bash(node_modules/.bin/ng build)",
       "Bash(echo:*)",
       "Bash(git ls-tree:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(find:*)"
     ]
   }
 }

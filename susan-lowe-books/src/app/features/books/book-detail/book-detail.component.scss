@@ -50,7 +50,7 @@
       h1 {
         font-size: 2.5rem;
         font-weight: 700;
-        color: var(--jamaica-green);
+        color: var(--primary-color);
         margin-bottom: 0.5rem;
         line-height: 1.2;
       }
@@ -82,7 +82,7 @@
           color: var(--text-dark);
 
           mat-icon {
-            color: var(--jamaica-green);
+            color: var(--primary-color);
             font-size: 1.2rem;
             width: 1.2rem;
             height: 1.2rem;
@@ -103,7 +103,7 @@
 
       .description {
         h3 {
-          color: var(--jamaica-green);
+          color: var(--primary-color);
           margin-bottom: 1rem;
         }
 
@@ -129,7 +129,7 @@
           .price-amount {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--jamaica-green);
+            color: var(--primary-color);
           }
         }
       }

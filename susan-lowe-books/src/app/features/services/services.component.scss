@@ -1,6 +1,6 @@
 .services-page {
   .services-hero {
-    background: linear-gradient(135deg, var(--jamaica-green) 0%, #006d2c 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #006d2c 100%);
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -22,7 +22,7 @@
     .lead {
       font-size: 1.25rem;
       font-weight: 300;
-      color: var(--jamaica-yellow);
+      color: var(--accent-color);
       margin-bottom: 0.5rem;
 
       @media (min-width: 960px) {
@@ -54,7 +54,7 @@
 
   .section-title {
     text-align: center;
-    color: var(--jamaica-green);
+    color: var(--primary-color);
     font-size: 2rem;
     margin-bottom: 3rem;
 
@@ -159,7 +159,7 @@
               font-size: 18px;
               width: 18px;
               height: 18px;
-              color: var(--jamaica-green);
+              color: var(--primary-color);
               flex-shrink: 0;
               margin-top: 2px;
             }
@@ -191,8 +191,8 @@
         padding: 12px 20px;
         font-size: 0.95rem;
         background-color: white;
-        border: 2px solid var(--jamaica-green);
-        color: var(--jamaica-green);
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
         display: flex;
         align-items: center;
         gap: 8px;
@@ -230,7 +230,7 @@
             font-size: 48px;
             width: 48px;
             height: 48px;
-            color: var(--jamaica-yellow);
+            color: var(--accent-color);
             opacity: 0.3;
           }
 
@@ -258,7 +258,7 @@
 
   .cta-section {
     .contact-card {
-      background: linear-gradient(135deg, var(--jamaica-green) 0%, #006d2c 100%);
+      background: linear-gradient(135deg, var(--primary-color) 0%, #006d2c 100%);
       color: white;
 
       mat-card-content {
@@ -339,10 +339,10 @@
             gap: 12px;
             font-size: 1.25rem;
             font-weight: 500;
-            color: var(--jamaica-green);
+            color: var(--primary-color);
 
             mat-icon {
-              color: var(--jamaica-green);
+              color: var(--primary-color);
             }
           }
         }

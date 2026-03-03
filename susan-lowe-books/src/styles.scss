@@ -1,15 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-/* Override Material theme colors with Jamaican palette */
+/* Override Material theme colors with sophisticated palette */
 .mat-mdc-raised-button.mat-primary {
-  --mdc-protected-button-container-color: #009B3A;
+  --mdc-protected-button-container-color: #0D7377;
   --mdc-protected-button-label-text-color: #ffffff;
 }
 
 .mat-mdc-raised-button.mat-accent {
-  --mdc-protected-button-container-color: #FED100;
-  --mdc-protected-button-label-text-color: #000000;
+  --mdc-protected-button-container-color: #E07A5F;
+  --mdc-protected-button-label-text-color: #ffffff;
+}
+
+.mat-mdc-stroked-button {
+  --mdc-outlined-button-outline-color: rgba(255, 255, 255, 0.7);
 }
 
 /* Global Styles */
@@ -26,20 +30,47 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #fafafa;
-  color: #2C3E50;
+  background-color: #FDFCFB;
+  color: #1F2937;
   line-height: 1.6;
 }
 
-/* Jamaican Color Variables */
+/* Modern Color Palette - Literary & Professional */
 :root {
-  --jamaica-green: #009B3A;
-  --jamaica-yellow: #FED100;
-  --jamaica-black: #000000;
-  --accent-blue: #0077BE;
-  --warm-sand: #F5E6D3;
-  --text-dark: #2C3E50;
-  --text-light: #7F8C8D;
+  /* Primary - Deep Teal (trust, calm, nature) */
+  --primary-color: #0D7377;
+  --primary-light: #14B8A6;
+  --primary-dark: #0A5C5F;
+
+  /* Secondary - Warm Coral (warmth, action, creativity) */
+  --secondary-color: #E07A5F;
+  --secondary-light: #F4A492;
+  --secondary-dark: #C85A3E;
+
+  /* Accent - Warm Gold (premium, literary, highlights) */
+  --accent-color: #F59E0B;
+  --accent-light: #FCD34D;
+  --accent-dark: #D97706;
+
+  /* Nature - Soft Green (Jamaica connection) */
+  --nature-green: #10B981;
+  --nature-green-light: #6EE7B7;
+
+  /* Neutrals - Warm palette */
+  --background-primary: #FDFCFB;
+  --background-secondary: #F9F7F4;
+  --background-tertiary: #F3EFE9;
+
+  /* Text colors */
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --text-light: #9CA3AF;
+
+  /* Legacy support (backwards compatibility) */
+  --jamaica-green: var(--nature-green);
+  --jamaica-yellow: var(--accent-color);
+  --jamaica-black: var(--text-primary);
 }
 
 /* Responsive Breakpoints */
@@ -146,6 +177,6 @@ img {
 
 /* Focus Styles */
 *:focus-visible {
-  outline: 2px solid var(--jamaica-yellow);
+  outline: 2px solid var(--primary-light);
   outline-offset: 2px;
 }

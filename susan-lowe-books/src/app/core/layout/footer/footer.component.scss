@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, var(--jamaica-black) 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, #111827 100%);
   color: white;
   padding: 48px 0 24px;
 
@@ -21,13 +21,13 @@
   .footer-column {
     h3 {
       font-size: 1.5rem;
-      color: var(--jamaica-yellow);
+      color: var(--accent-color);
       margin-bottom: 1rem;
     }
 
     h4 {
       font-size: 1.125rem;
-      color: var(--jamaica-yellow);
+      color: var(--accent-color);
       margin-bottom: 1rem;
     }
 
@@ -39,7 +39,7 @@
     }
 
     .credentials {
-      color: var(--jamaica-green);
+      color: var(--nature-green);
       font-weight: 500;
     }
 
@@ -57,7 +57,7 @@
 
         &:hover {
           opacity: 1;
-          color: var(--jamaica-yellow);
+          color: var(--accent-color);
           padding-left: 8px;
         }
       }
@@ -83,12 +83,12 @@
           font-size: 18px;
           width: 18px;
           height: 18px;
-          color: var(--jamaica-green);
+          color: var(--primary-light);
         }
 
         &:hover {
           opacity: 1;
-          color: var(--jamaica-yellow);
+          color: var(--accent-color);
         }
       }
 
@@ -119,7 +119,7 @@
         }
 
         &:hover {
-          background-color: var(--jamaica-green);
+          background-color: var(--primary-color);
           transform: translateY(-4px);
         }
       }

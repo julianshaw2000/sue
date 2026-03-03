@@ -6,7 +6,7 @@
     margin-bottom: 48px;
 
     h2 {
-      color: var(--jamaica-green);
+      color: var(--primary-color);
       margin-bottom: 0.5rem;
     }
 
@@ -62,7 +62,7 @@
       text-align: center;
 
       h2 {
-        color: var(--jamaica-green);
+        color: var(--primary-color);
         margin-bottom: 1rem;
       }
 
@@ -74,8 +74,8 @@
         margin-bottom: 1.5rem;
 
         .credential {
-          background-color: var(--jamaica-yellow);
-          color: var(--jamaica-black);
+          background-color: var(--accent-color);
+          color: var(--text-primary);
           padding: 6px 16px;
           border-radius: 20px;
           font-size: 0.9rem;

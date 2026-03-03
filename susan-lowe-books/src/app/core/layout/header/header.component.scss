@@ -106,15 +106,15 @@
     border-bottom: 1px solid #e0e0e0;
 
     mat-icon {
-      color: var(--jamaica-green);
+      color: var(--primary-color);
       font-size: 24px;
       width: 24px;
       height: 24px;
     }
 
     &.active {
-      background-color: var(--warm-sand);
-      color: var(--jamaica-green);
+      background-color: var(--background-tertiary);
+      color: var(--primary-color);
     }
 
     &:hover {

@@ -7,7 +7,7 @@
     margin-bottom: 48px;
 
     h1 {
-      color: var(--jamaica-green);
+      color: var(--primary-color);
     }
   }
 
@@ -31,14 +31,14 @@
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        border: 4px solid var(--jamaica-green);
+        border: 4px solid var(--primary-color);
       }
     }
 
     .author-details {
       h2 {
         font-size: 2.5rem;
-        color: var(--jamaica-green);
+        color: var(--primary-color);
         margin-bottom: 0.5rem;
       }
 
@@ -56,8 +56,8 @@
         margin-bottom: 2rem;
 
         mat-chip {
-          background-color: var(--jamaica-yellow);
-          color: var(--jamaica-black);
+          background-color: var(--accent-color);
+          color: var(--text-primary);
           font-weight: 500;
         }
       }
@@ -74,7 +74,7 @@
 
       .social-links {
         h3 {
-          color: var(--jamaica-green);
+          color: var(--primary-color);
           margin-bottom: 1rem;
         }
 
@@ -104,7 +104,7 @@
     text-align: center;
 
     h2 {
-      color: var(--jamaica-green);
+      color: var(--primary-color);
       margin-bottom: 2rem;
     }
 
@@ -130,7 +130,7 @@
           .book-price {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--jamaica-green);
+            color: var(--primary-color);
             margin: 0;
           }
         }
