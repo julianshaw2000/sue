@@ -2,43 +2,67 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
 
   .toolbar-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 8px 16px;
+    padding: 12px 16px;
+
+    @media (min-width: 960px) {
+      padding: 16px 24px;
+    }
   }
 
   .brand {
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: white;
-    transition: opacity 0.2s;
+    transition: all 0.2s ease;
 
     &:hover {
-      opacity: 0.9;
+      transform: translateY(-1px);
     }
 
     .brand-name {
       font-size: 1.5rem;
       font-weight: 700;
       line-height: 1.2;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      @media (min-width: 960px) {
+        font-size: 1.75rem;
+      }
     }
 
     .brand-tagline {
-      font-size: 0.75rem;
-      opacity: 0.9;
-      font-weight: 300;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+
+      @media (min-width: 960px) {
+        font-size: 0.75rem;
+      }
     }
   }
 
   .desktop-nav {
     display: none;
-    gap: 8px;
+    gap: 4px;
 
     @media (min-width: 960px) {
       display: flex;
@@ -48,29 +72,66 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      color: white;
-      font-size: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
       font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      position: relative;
+      transition: all 0.2s ease;
 
       mat-icon {
         font-size: 20px;
         width: 20px;
         height: 20px;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 24px;
+        height: 2px;
+        background: var(--primary-color);
+        border-radius: 2px;
+        transition: transform 0.3s ease;
       }
 
       &.active {
-        background-color: rgba(255, 255, 255, 0.2);
+        color: var(--primary-color);
+        background-color: var(--background-tertiary);
+
+        mat-icon {
+          opacity: 1;
+        }
+
+        &::after {
+          transform: translateX(-50%) scaleX(1);
+        }
       }
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--primary-color);
+        background-color: var(--background-secondary);
+
+        mat-icon {
+          opacity: 1;
+        }
       }
     }
   }
 
   .mobile-menu-button {
     display: block;
-    color: white;
+    color: var(--text-primary);
+
+    mat-icon {
+      color: var(--primary-color);
+    }
 
     @media (min-width: 960px) {
       display: none;
@@ -83,7 +144,8 @@
   top: 64px;
   left: 0;
   right: 0;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   z-index: 999;
   display: flex;
@@ -99,26 +161,54 @@
     align-items: center;
     gap: 12px;
     padding: 16px 24px;
-    color: var(--text-dark);
+    color: var(--text-primary);
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+    position: relative;
 
     mat-icon {
       color: var(--primary-color);
       font-size: 24px;
       width: 24px;
       height: 24px;
+      transition: transform 0.2s;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--primary-color);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
     }
 
     &.active {
       background-color: var(--background-tertiary);
       color: var(--primary-color);
+
+      &::before {
+        transform: scaleY(1);
+      }
+
+      mat-icon {
+        transform: scale(1.1);
+      }
     }
 
     &:hover {
-      background-color: #f5f5f5;
+      background-color: var(--background-secondary);
+      padding-left: 28px;
+
+      mat-icon {
+        transform: translateX(2px);
+      }
     }
   }
 }
