@@ -21,7 +21,13 @@
       "Bash(tasklist:*)",
       "Bash(lsof:*)",
       "Bash(handle .git/index.lock)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run build:*)",
+      "Bash(ng build:*)",
+      "Bash(npx ng:*)",
+      "Bash(node_modules/.bin/ng build)",
+      "Bash(echo:*)"
     ]
   }
 }
