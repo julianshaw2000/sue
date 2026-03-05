@@ -10,7 +10,7 @@ interface Service {
   title: string;
   description: string;
   features: string[];
-  category: 'counseling' | 'holistic' | 'coaching' | 'medical';
+  category: 'counselling' | 'holistic' | 'coaching' | 'medical';
 }
 
 @Component({
@@ -33,7 +33,7 @@ export class ServicesComponent {
   services: Service[] = [
     {
       icon: 'psychology',
-      title: 'Online Counseling',
+      title: 'Online Counselling',
       description: 'One of the Caribbean\'s first online coaching & counselling services offered by a registered physician.',
       features: [
         'Video and phone sessions',
@@ -41,7 +41,7 @@ export class ServicesComponent {
         'Available across Jamaica and internationally',
         'Flexible scheduling'
       ],
-      category: 'counseling'
+      category: 'counselling'
     },
     {
       icon: 'spa',
@@ -49,7 +49,7 @@ export class ServicesComponent {
       description: 'Integrative approach combining conventional medicine with natural therapies and lifestyle factors.',
       features: [
         'Alternative therapy approaches',
-        'Nutritional counseling',
+        'Nutritional counselling',
         'Lifestyle medicine',
         'Natural remedies'
       ],
@@ -81,15 +81,15 @@ export class ServicesComponent {
     },
     {
       icon: 'favorite',
-      title: 'Human Sexuality Counseling',
+      title: 'Human Sexuality Counselling',
       description: 'Professional guidance on sexual health and relationship concerns.',
       features: [
         'Individual sessions',
-        'Couples counseling',
+        'Couples counselling',
         'Evidence-based approach',
         'Confidential support'
       ],
-      category: 'counseling'
+      category: 'counselling'
     },
     {
       icon: 'medical_services',

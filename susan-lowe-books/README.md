@@ -156,7 +156,7 @@ Book information is stored in `src/assets/data/books.json`. Update this file to:
 - Safari (latest)
 - Edge (latest)
 
-## License
+## Licence
 
 Copyright © 2024 Susan Lowe. All rights reserved.
 
